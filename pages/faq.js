@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Question from "../components/Question";
 
-
 export default function Download() {
   const { user, isLoading } = useUser();
   /*
@@ -38,7 +37,7 @@ export default function Download() {
     content: "Bonjour je suis une question écrite par défaut",
     upvotes: 0,
     author: {
-      mail: "",
+      mail: "aa",
       name: "Jean",
       surname: "Dupont",
       picture:
