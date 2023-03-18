@@ -1,0 +1,34 @@
+.header_style {
+  background-color: rgb(41, 40, 40);
+}
+
+.logo_style {
+  filter: invert(1);
+  width: 75px;
+  height: auto;
+}
+
+.user_logging {
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.user_data_style {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.user_name_style {
+  color: white;
+  width: 150px;
+}
+
+.user_logo_style {
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 50px;
+}

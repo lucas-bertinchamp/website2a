@@ -1,0 +1,13 @@
+.footer_style {
+  background-color: rgb(41, 40, 40);
+}
+
+.logo_style {
+  filter: invert(1);
+  width: 75px;
+  height: auto;
+}
+
+#couleur {
+  color: #fff;
+}

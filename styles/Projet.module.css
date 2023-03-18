@@ -1,0 +1,31 @@
+.main_title_box {
+  display: flex;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: solid 4px #000000;
+}
+
+.main_title {
+  font-family: "Hellvetica", "Roboto", "system-ui", "Public Sans", sans-serif;
+  color: #ffffff;
+  width: 60%;
+  text-align: center;
+  position: absolute;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+.main_image {
+  width: 100%;
+  height: 100%;
+  background-image: url("../public/asimo.jpg");
+  background-size: cover;
+}
+
+.full_page_box {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    height: auto;
+    margin-bottom: 20px;
+}

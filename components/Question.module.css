@@ -1,0 +1,12 @@
+.question_box {
+  border: 1px #000000;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.upvotes {
+  display: flex;
+  flex-direction: line;
+  align-items: center;
+}
