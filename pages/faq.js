@@ -3,49 +3,48 @@ import Header from "../components/Header";
 import Head from "next/head";
 import styles from "/styles/Faq.module.css";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import Image from "next/image";
 import Link from "next/link";
 import Question from "../components/Question";
+import { useState } from "react";
+import Router from "next/router";
 
-export default function Download() {
-  const { user, isLoading } = useUser();
-  /*
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
+import prisma from "../lib/prisma";
+
+export const getServerSideProps = async () => {
+  const feed = await prisma.question.findMany({
+    include: {
+      author: true,
     },
   });
-
-  client.connect();
-
-  client.query(
-    "SELECT table_schema,table_name FROM information_schema.tables;",
-    (err, res) => {
-      if (err) throw err;
-      for (let row of res.rows) {
-        console.log(JSON.stringify(row));
-      }
-      client.end();
-    }
-  );*/
-
-  let question = {
-    title: "En quoi consiste le projet ?",
-    id: 1,
-    date: "12/12/2021",
-    content: "Bonjour je suis une question écrite par défaut",
-    upvotes: 0,
-    author: {
-      mail: "aa",
-      name: "Jean",
-      surname: "Dupont",
-      picture:
-        "https://cdn.auth0.com/blog/auth0-react-sample/assets/profile.png",
-    },
+  return {
+    props: { feed },
   };
+};
+
+export default function Download(props) {
+  const { user, isLoading } = useUser();
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
   if (isLoading) return <div>Loading...</div>;
+
+  const submitData = async (e) => {
+    try {
+      const body = { title, content, user };
+      await fetch("/api/post", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      await Router.push("/faq");
+      setContent("");
+      setTitle("");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -71,7 +70,9 @@ export default function Download() {
       {!user && (
         <div className={styles.main_page_box_disconnected}>
           <div className={styles.main_page_disconnected}>
-            <h2 className={styles.main_page_title}>Vous n'êtes pas connecté</h2>
+            <h2 className={styles.main_page_title}>
+              Vous n&apos;êtes pas connecté
+            </h2>
             <p className={styles.main_page_text}>
               Vous devez être connecté pour accéder à cette page.
             </p>
@@ -91,14 +92,14 @@ export default function Download() {
             <h2 className={styles.main_page_title}>FAQ</h2>
             <p className={styles.main_page_text}>
               Sur cette page, vous pouvez poser vos questions et obtenir des
-              réponses par d'autres utilisateurs. Vous pouvez également
+              réponses par d&apos;autres utilisateurs. Vous pouvez également
               consulter les questions et réponses déjà posées.
             </p>
 
             <div className={styles.send_question_box}>
               <h3 className={styles.send_question_title}>Poser une question</h3>
               <p className={styles.send_question_text}>
-                Vous pouvez poser une question à l'aide de ce formulaire :
+                Vous pouvez poser une question à l&apos;aide de ce formulaire :
               </p>
               <form>
                 <div className="form-group">
@@ -107,15 +108,23 @@ export default function Download() {
                     id="exampleFormControlTextarea1"
                     rows="1"
                     placeholder="Titre de la question"
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
                   ></textarea>
                   <textarea
                     class="form-control"
                     id="exampleFormControlTextarea1"
                     rows="3"
+                    onChange={(e) => setContent(e.target.value)}
+                    value={content}
                   ></textarea>
                 </div>
               </form>
-              <button type="button" className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => submitData()}
+              >
                 Envoyer
               </button>
             </div>
@@ -124,7 +133,9 @@ export default function Download() {
 
             <div className={styles.questions_box}>
               <h3 className={styles.questions_title}>Questions</h3>
-              <Question data={question}></Question>
+              {props.feed.map((question) => (
+                <Question data={question}></Question>
+              ))}
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function Question(props) {
         <h3 className={styles.question_title}>{props.data.title}</h3>
         <div className={styles.question_author}>
           <div className={styles.question_author_name}>
-            Rédigée par {props.data.author.name} le {props.data.date}
+            Rédigée par {props.data.author.name} le
           </div>
         </div>
       </div>

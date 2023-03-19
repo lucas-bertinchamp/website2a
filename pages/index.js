@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image.js";
 
 export default function Home() {
+
   return (
     <>
       <Head>

@@ -1,0 +1,19 @@
+CREATE TABLE question (
+  id SERIAL PRIMARY KEY,
+  author_email VARCHAR(255) NOT NULL,
+  creation_hour DATE NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  question VARCHAR(10000) NOT NULL);
+
+CREATE TABLE answer (
+  id SERIAL PRIMARY KEY,
+  question_id INTEGER NOT NULL,
+  author_id INTEGER NOT NULL,
+  creation_hour DATE NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  question VARCHAR(10000) NOT NULL);
+
+CREATE TABLE author (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL);
