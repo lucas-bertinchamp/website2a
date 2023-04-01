@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "/components/Footer";
+import Header from "/components/Header";
 import Head from "next/head";
 import styles from "/styles/Projet.module.css";
 import Image from "next/image";
@@ -61,15 +61,16 @@ export default function Projet() {
                       <p className={styles.first_content_first_text}>
                         L&apos;apprentissage par renforcement est un type
                         d&apos;apprentissage automatique qui permet à un agent
-                        d&apos;apprendre à effectuer une tâche en interagissant avec
-                        son environnement. L&apos;agent reçoit des récompenses ou des
-                        punitions en fonction de ses actions. Il apprend à
-                        maximiser les récompenses et à minimiser les punitions.
+                        d&apos;apprendre à effectuer une tâche en interagissant
+                        avec son environnement. L&apos;agent reçoit des
+                        récompenses ou des punitions en fonction de ses actions.
+                        Il apprend à maximiser les récompenses et à minimiser
+                        les punitions.
                         <br />
                         <br />
                         Pour bien comprendre le fonctionnement de
-                        l&apos;apprentissage par renforcement, commençons par définir
-                        quelques termes :
+                        l&apos;apprentissage par renforcement, commençons par
+                        définir quelques termes :
                       </p>
                     </div>
                     <div className={styles.case}>
@@ -77,35 +78,38 @@ export default function Projet() {
                         <ul>
                           <li className={styles.first_content_second_text}>
                             <p>
-                              Agent : L&apos;agent est l&apos;entité qui va apprendre à
-                              effectuer une tâche. (Ici le robot)
+                              Agent : L&apos;agent est l&apos;entité qui va
+                              apprendre à effectuer une tâche. (Ici le robot)
                             </p>
                           </li>
                           <li className={styles.first_content_second_text}>
                             <p>
-                              Environnement : L&apos;environnement est un système
-                              dynamique qui évolue au cours du temps. Il est
-                              composé de plusieurs éléments (agents, objets,
+                              Environnement : L&apos;environnement est un
+                              système dynamique qui évolue au cours du temps. Il
+                              est composé de plusieurs éléments (agents, objets,
                               etc.) qui interagissent entre eux.
                             </p>
                           </li>
                           <li className={styles.first_content_second_text}>
                             <p>
                               Simulation : La simulation est un outil qui permet
-                              de reproduire l&apos;environnement dans lequel l&apos;agent
-                              va apprendre. Elle permet de tester différentes
-                              configurations de l&apos;environnement et de l&apos;agent.
+                              de reproduire l&apos;environnement dans lequel
+                              l&apos;agent va apprendre. Elle permet de tester
+                              différentes configurations de l&apos;environnement
+                              et de l&apos;agent.
                             </p>
                           </li>
                         </ul>
                         <p>
-                          Comme sur le gif à droite, l&apos;agent se déplace dans son
-                          environnement. On passe par un simulateur pour tester
-                          différentes configurations de l&apos;environnement et de
-                          l&apos;agent avant de les implémenter sur le robot réel.
+                          Comme sur le gif à droite, l&apos;agent se déplace
+                          dans son environnement. On passe par un simulateur
+                          pour tester différentes configurations de
+                          l&apos;environnement et de l&apos;agent avant de les
+                          implémenter sur le robot réel.
                           <br />
                           <br />
-                          Mais comment l&apos;agent apprend à effectuer une tâche ?
+                          Mais comment l&apos;agent apprend à effectuer une
+                          tâche ?
                         </p>
                       </div>
 
@@ -135,23 +139,24 @@ export default function Projet() {
                         <ul>
                           <li className={styles.first_content_third_text}>
                             <p>
-                              Observation : L&apos;agent observe son environnement et
-                              enregistre les informations qu&apos;il reçoit. Elle
-                              peut être constituée de plusieurs paramètres
-                              (position, orientation, etc.).
+                              Observation : L&apos;agent observe son
+                              environnement et enregistre les informations
+                              qu&apos;il reçoit. Elle peut être constituée de
+                              plusieurs paramètres (position, orientation,
+                              etc.).
                             </p>
                           </li>
                           <li className={styles.first_content_third_text}>
                             <p>
-                              Actions : L&apos;agent peut effectuer des actions sur
-                              son environnement. Il peut par exemple se
+                              Actions : L&apos;agent peut effectuer des actions
+                              sur son environnement. Il peut par exemple se
                               déplacer, interagir avec un objet, etc.
                             </p>
                           </li>
                           <li className={styles.first_content_third_text}>
                             <p>
-                              La récompense : L&apos;agent reçoit une récompense ou
-                              une punition en fonction de ses actions. Il
+                              La récompense : L&apos;agent reçoit une récompense
+                              ou une punition en fonction de ses actions. Il
                               apprend à maximiser les récompenses et à minimiser
                               les punitions. Cette récompense peut être positive
                               ou négative et est représentée par un nombre.
@@ -160,11 +165,11 @@ export default function Projet() {
                         </ul>
                         <p>
                           A chaque timestep (unité élémentaire de temps),
-                          l&apos;agent récupere une observation de son environnement
-                          et effectue une action. Cette action est déterminée
-                          par la politique de l&apos;agent. La politique est une
-                          fonction qui associe une action à une observation.
-                          (généralement un réseau de neurones)
+                          l&apos;agent récupere une observation de son
+                          environnement et effectue une action. Cette action est
+                          déterminée par la politique de l&apos;agent. La
+                          politique est une fonction qui associe une action à
+                          une observation. (généralement un réseau de neurones)
                         </p>
                       </div>
                     </div>
@@ -172,20 +177,22 @@ export default function Projet() {
                     <div className={styles.case}>
                       <div className={styles.text_zone}>
                         <p>
-                          Finalement, l&apos;agent apprend à effectuer une tâche en
-                          interagissant avec son environnement. Il reçoit des
+                          Finalement, l&apos;agent apprend à effectuer une tâche
+                          en interagissant avec son environnement. Il reçoit des
                           récompenses ou des punitions en fonction de ses
                           actions.
                           <br />
                           <br />
-                          Si une action est bénéfique pour atteindre l&apos;objectif,
-                          la récompense est positive. Si une action est néfaste
-                          pour atteindre l&apos;objectif, la récompense est négative.
+                          Si une action est bénéfique pour atteindre
+                          l&apos;objectif, la récompense est positive. Si une
+                          action est néfaste pour atteindre l&apos;objectif, la
+                          récompense est négative.
                           <br />
                           <br />
                           L&apos;agent apprend à maximiser les récompenses en
                           adaptant sa politique. Il apprend à effectuer des
-                          actions qui lui permettent d&apos;atteindre l&apos;objectif.
+                          actions qui lui permettent d&apos;atteindre
+                          l&apos;objectif.
                         </p>
                       </div>
                       <div className={styles.image_zone}>
@@ -224,11 +231,11 @@ export default function Projet() {
                     <div className={styles.case}>
                       <p className={styles.second_content_first_text}>
                         Le passage par un simulateur est essentiel pour tester
-                        des configurations différentes de l&apos;environnement et de
-                        l&apos;agent avant de les implémenter sur le robot réel. En
-                        simulation, on peut changer les configurations initiales
-                        de l&apos;environnement et de l&apos;agent, et observer les
-                        résultats.
+                        des configurations différentes de l&apos;environnement
+                        et de l&apos;agent avant de les implémenter sur le robot
+                        réel. En simulation, on peut changer les configurations
+                        initiales de l&apos;environnement et de l&apos;agent, et
+                        observer les résultats.
                         <br />
                         <br />
                         Pour un apprentissage réussi, il faut mettre en place un
@@ -244,19 +251,21 @@ export default function Projet() {
                         <ul>
                           <li className={styles.second_content_second_text}>
                             <p>
-                              Fonction d&apos;observation : L&apos;agent observe son
-                              environnement et enregistre les informations qu&apos;il
-                              reçoit. Elle peut être constituée de plusieurs
-                              paramètres (position, orientation, etc.).
+                              Fonction d&apos;observation : L&apos;agent observe
+                              son environnement et enregistre les informations
+                              qu&apos;il reçoit. Elle peut être constituée de
+                              plusieurs paramètres (position, orientation,
+                              etc.).
                             </p>
                           </li>
                           <li className={styles.second_content_second_text}>
                             <p>
                               Fonction reset : Elle est appelée à chaque début
                               de partie. Elle permet de réinitialiser
-                              l&apos;environnement et l&apos;agent si l&apos;agent a atteint
-                              l&apos;objectif, si le nombre de timestep maximum est
-                              atteint, ou si l&apos;agent a échoué.
+                              l&apos;environnement et l&apos;agent si
+                              l&apos;agent a atteint l&apos;objectif, si le
+                              nombre de timestep maximum est atteint, ou si
+                              l&apos;agent a échoué.
                             </p>
                           </li>
                           <li className={styles.second_content_second_text}>
@@ -270,12 +279,13 @@ export default function Projet() {
                           <li className={styles.second_content_second_text}>
                             <p>
                               Fonction step : Elle est appelée à chaque
-                              timestep. C&apos;est elle qui gère tout l&apos;environnement
-                              en appelant les fonctions d&apos;observation, de
-                              réinitialisation et de récompense. Elle renvoie
-                              l&apos;état dans lequel se trouve l&apos;agent, la
-                              récompense reçue et un booléen qui indique si
-                              l&apos;agent a atteint l&apos;objectif ou non.
+                              timestep. C&apos;est elle qui gère tout
+                              l&apos;environnement en appelant les fonctions
+                              d&apos;observation, de réinitialisation et de
+                              récompense. Elle renvoie l&apos;état dans lequel
+                              se trouve l&apos;agent, la récompense reçue et un
+                              booléen qui indique si l&apos;agent a atteint
+                              l&apos;objectif ou non.
                             </p>
                           </li>
                         </ul>
@@ -302,27 +312,30 @@ export default function Projet() {
                       </div>
                       <p className={styles.text_zone}>
                         Pour l&apos;apprentissage, on utilise un algorithme
-                        d&apos;apprentissage par renforcement. Il en existe plusieurs
-                        comme DQN, A2C, PPO, etc. Le choix de l&apos;algorithme
-                        dépend de l&apos;environnement et de l&apos;agent et notamment de
-                        l&apos;espace des observations et des actions.
+                        d&apos;apprentissage par renforcement. Il en existe
+                        plusieurs comme DQN, A2C, PPO, etc. Le choix de
+                        l&apos;algorithme dépend de l&apos;environnement et de
+                        l&apos;agent et notamment de l&apos;espace des
+                        observations et des actions.
                         <br />
                         <br />
-                        Lors de l&apos;apprentissage, à chaque timestep, la fonction
-                        step est appelée. Selon la valeur de récompense reçue,
-                        l&apos;agent adapte sa politique.
+                        Lors de l&apos;apprentissage, à chaque timestep, la
+                        fonction step est appelée. Selon la valeur de récompense
+                        reçue, l&apos;agent adapte sa politique.
                         <br />
                         <br />
-                        Il est donc important de bien choisir l&apos;environnement et
-                        l&apos;agent pour que l&apos;apprentissage soit réussi.
+                        Il est donc important de bien choisir
+                        l&apos;environnement et l&apos;agent pour que
+                        l&apos;apprentissage soit réussi.
                         <br />
                         <br />
-                        Quand l&apos;environnement est bien adpaté à un problème, on
-                        peut l&apos;implémenter sur différents simulateurs. Par
-                        exemple, un problème à deux ou trois dimensions
-                        utilisera des simulateurs différents (pyglet en 2D et
-                        pybullet en 3D) mais si l&apos;environnement est bien adpaté,
-                        il pourra être utilisé dans les deux cas.
+                        Quand l&apos;environnement est bien adpaté à un
+                        problème, on peut l&apos;implémenter sur différents
+                        simulateurs. Par exemple, un problème à deux ou trois
+                        dimensions utilisera des simulateurs différents (pyglet
+                        en 2D et pybullet en 3D) mais si l&apos;environnement
+                        est bien adpaté, il pourra être utilisé dans les deux
+                        cas.
                       </p>
                     </div>
                   </div>
@@ -361,21 +374,21 @@ export default function Projet() {
                     </div>
                     <div className={styles.case}>
                       <p className={styles.text_zone}>
-                        A droite se trouve une photo de l&apos;environnement 3D que
-                        nous utilisons. Nous avons la possibilité de disposer
-                        des murs avec lesquels le robot pourra entrer en
-                        collision.
+                        A droite se trouve une photo de l&apos;environnement 3D
+                        que nous utilisons. Nous avons la possibilité de
+                        disposer des murs avec lesquels le robot pourra entrer
+                        en collision.
                         <br />
                         <br />
                         Cependant, nous avons rencontré des problèmes avec ce
                         simulateur. En effet, une fois l&apos;environnement
-                        d&apos;apprentissage mis en place, l&apos;apprentissage était
-                        extrêmeement lent pour des resulats peu concluants. Cela
-                        est dû au simulateur 3D qui est très couteux en
-                        ressources. (1h d&apos;apprentissage pour apprendre au robot
-                        à marcher en ligne droite) Nous avons donc décidé de
-                        changer de simulateur et de passer sur un simulateur en
-                        2D.
+                        d&apos;apprentissage mis en place, l&apos;apprentissage
+                        était extrêmeement lent pour des resulats peu
+                        concluants. Cela est dû au simulateur 3D qui est très
+                        couteux en ressources. (1h d&apos;apprentissage pour
+                        apprendre au robot à marcher en ligne droite) Nous avons
+                        donc décidé de changer de simulateur et de passer sur un
+                        simulateur en 2D.
                       </p>
                       <div className={styles.image_zone}>
                         <Image
@@ -398,28 +411,30 @@ export default function Projet() {
                       </div>
                       <p className={styles.text_zone}>
                         Passer en 2D présente différents avantages. Tout
-                        d&apos;abord, le simulateur est beaucoup plus rapide et donc
-                        l&apos;apprentissage l&apos;est aussi. De plus, il est plus facile
-                        de créer des environnements plus complexes en 2D. Enfin,
-                        il est plus facile de visualiser les résultats de
-                        l&apos;apprentissage.
+                        d&apos;abord, le simulateur est beaucoup plus rapide et
+                        donc l&apos;apprentissage l&apos;est aussi. De plus, il
+                        est plus facile de créer des environnements plus
+                        complexes en 2D. Enfin, il est plus facile de visualiser
+                        les résultats de l&apos;apprentissage.
                         <br />
                         <br />
                         Le simulateur 2D a été développé de telle manière que
-                        l&apos;agent puisse se déplacer avec les mêmes actions que
-                        dans le simulateur 3D. Cela permet d&apos;utiliser le même
-                        environnement d&apos;apprentissage pour les deux simulateurs.
+                        l&apos;agent puisse se déplacer avec les mêmes actions
+                        que dans le simulateur 3D. Cela permet d&apos;utiliser
+                        le même environnement d&apos;apprentissage pour les deux
+                        simulateurs.
                         <br />
                         <br />
-                        Une fois l&apos;apprentissage terminé en 2D, nous pourrons
-                        utiliser le modèle obtenu au simulateur 3D. Quand les
-                        resultats seront concluants, nous pourrons tester le
-                        modèle sur un robot réel.
+                        Une fois l&apos;apprentissage terminé en 2D, nous
+                        pourrons utiliser le modèle obtenu au simulateur 3D.
+                        Quand les resultats seront concluants, nous pourrons
+                        tester le modèle sur un robot réel.
                         <br />
                         <br />
-                        Aujourd&apos;hui, l&apos;environnement d&apos;apprentissage 2D est en
-                        place. Il reste à optimiser la fonction de récompense et
-                        à lancer l&apos;apprentissage.
+                        Aujourd&apos;hui, l&apos;environnement
+                        d&apos;apprentissage 2D est en place. Il reste à
+                        optimiser la fonction de récompense et à lancer
+                        l&apos;apprentissage.
                       </p>
                     </div>
                   </div>
