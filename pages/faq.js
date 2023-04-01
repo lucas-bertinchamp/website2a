@@ -7,7 +7,6 @@ import Link from "next/link";
 import Question from "../components/Question";
 import { useState } from "react";
 import Router from "next/router";
-import MyModal from "../components/ModalAnswer";
 
 import prisma from "../lib/prisma";
 import Answer from "../components/Answer";
@@ -29,15 +28,14 @@ export const getServerSideProps = async () => {
 };
 
 export default function Download(props) {
-  
   let printQuestionsAnswers = () => {
     return props.questions.map((question) => {
-      return [<Question data={question}></Question>].concat(
+      return [<Question data={question}></Question>].concat([
         props.answers.map((answer) => {
           if (answer.questionId === question.id)
             return <Answer data={answer}></Answer>;
-        })
-      );
+        }),
+      ]);
     });
   };
 

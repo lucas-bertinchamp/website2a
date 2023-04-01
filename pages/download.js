@@ -70,7 +70,7 @@ export default function Download() {
                 <br />
                 <p>
                   La version à jour du projet est disponible sur la branche
-                  <b>"Lucas"</b>
+                  <b>&#34;Lucas&#34;</b>
                 </p>
               </div>
             </div>
