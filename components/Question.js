@@ -1,4 +1,7 @@
 import styles from "./Question.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import ModalAnswer from "./ModalAnswer";
 
 export default function Question(props) {
   return (
@@ -28,6 +31,8 @@ export default function Question(props) {
           Downvote
         </button>
         <div className={styles.upvotes_number}>0</div>
+
+        <ModalAnswer question={props.data}></ModalAnswer>
       </div>
     </div>
   );

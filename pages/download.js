@@ -2,6 +2,8 @@ import Footer from "/components/Footer";
 import Header from "/components/Header";
 import Head from "next/head";
 import styles from "/styles/Download.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Download() {
   return (
@@ -27,30 +29,51 @@ export default function Download() {
       </div>
 
       <div className={styles.main_box}>
-        <h1 className={styles.title_box}>Télécharger le projet</h1>
-        <div className={styles.main_description}>
-          <p>
-            Lorem ipsum door sit aet, consectetur adipiscing elit. Sed
-            tincidunt, nisl eget aliquam tincidunt, nisl nisl aliquam tortor,
-            eget aliquam nisnisl sit amet nisl. Sed tincidunt,
-          </p>
-        </div>
+        <div className={styles.content_box}>
+          <h1 className={styles.title_box}>Télécharger le projet</h1>
+          <div className={styles.main_description}>
+            <p>
+              Si vous souhaitez tester les fonctionnalités du projet, vous
+              pouvez le télécharger sur le GitHub ci-dessous :
+            </p>
+          </div>
 
-        <div className={styles.github_box}>
-          <div className={styles.github_logo}>
-            <p>Ici un logo</p>
-          </div>
-          <div className={styles.github_desc}>
-            <p>GitHub</p>
-          </div>
-        </div>
-
-        <div className={styles.server_box}>
-          <div className={styles.server_desc}>
-            <p>Serveur</p>
-          </div>
-          <div className={styles.server_logo}>
-            <p>Ici un logo</p>
+          <div className={styles.big_card_box}>
+            <div className={styles.big_card}>
+              <div className={styles.github_image_box}>
+                <Image
+                  src="/github.png"
+                  width={500}
+                  height={500}
+                  className={styles.robot_image}
+                />
+              </div>
+              <div className={styles.big_card_text}>
+                <h2>Github</h2>
+                <p>
+                  Le <b>Github</b> du projet est disponible en cliquant{" "}
+                  <Link
+                    href="https://github.com/mines-nancy/projet_lucas_bertinchamp"
+                    className={styles.link}
+                  >
+                    ici
+                  </Link>
+                </p>
+                <p>
+                  Depuis un terminal, vous pouvez le cloner sur votre machine en
+                  utilisant la commande suivante :
+                </p>
+                <code>
+                  git clone
+                  https://github.com/mines-nancy/projet_lucas_bertinchamp.git
+                </code>
+                <br />
+                <p>
+                  La version à jour du projet est disponible sur la branche
+                  <b>"Lucas"</b>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

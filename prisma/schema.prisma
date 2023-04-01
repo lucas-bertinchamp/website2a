@@ -11,21 +11,46 @@ datasource db {
 }
 
 model Question {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  id       Int      @id @default(autoincrement())
+  title    String
+  content  String?
+  author   User?    @relation(fields: [authorId], references: [id])
+  authorId Int?
+  answers  Answer[]
+
   @@map(name: "questions")
 }
 
+model upVotes {
+  idQuestion   Int    @id
+  numberUpVote Int    @default(0)
+  voters       User[]
+}
+
+model Answer {
+  id       Int      @id @default(autoincrement())
+  content  String
+  
+  author   User?    @relation(fields: [authorId], references: [id])
+  authorId Int?
+
+  question Question @relation(fields: [questionId], references: [id])
+  questionId Int
+
+  @@map(name: "answers")
+}
+
 model User {
-  id            Int      @id @default(autoincrement())
-  name          String?
-  email         String?   @unique
-  questions     Question[]
+  id                Int        @id @default(autoincrement())
+  name              String?
+  email             String?    @unique
+  questions         Question[]
+  answers           Answer[]
+  role              Role       @default(USER)
+  upVotes           upVotes?   @relation(fields: [upVotesIdQuestion], references: [idQuestion])
+  upVotesIdQuestion Int?
+
   @@map(name: "users")
-  role      Role     @default(USER)
 }
 
 enum Role {

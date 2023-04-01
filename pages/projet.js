@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Head from "next/head";
 import styles from "/styles/Projet.module.css";
+import Image from "next/image";
 
 export default function Projet() {
   return (
@@ -25,106 +26,404 @@ export default function Projet() {
         <div className={styles.main_image}> </div>
         <h1 className={styles.main_title}>Présentation du Projet</h1>
       </div>
+      <div className={styles.page}>
+        <div className={styles.full_page_box}>
+          <h1 className={styles.objectif_title}>
+            Comprendre le projet et l'apprentissage par renforcement
+          </h1>
+          <p className={styles.objectif_title}>
+            Vous trouverez ci-dessous une présentation de 3 axes principaux qui
+            permettent d'aprehender les différents concepts du projet.
+          </p>
 
-      <div className={styles.full_page_box}>
-        <h1 className={styles.objectif_title}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </h1>
-        <p className={styles.objectif_text}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-        </p>
-
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
+          <div class={`accordion`} id="accordionPanelsStayOpenExample">
+            <div className={`accordion-item`}>
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button
+                  className={`accordion-button collapsed ${styles.accordion_title}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  Apprentissage par renforcement : Kézako ?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingOne"
               >
-                Apprentissage par renforcement : Kézako ?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseOne"
-              class="accordion-collapse collapse show"
-              aria-labelledby="panelsStayOpen-headingOne"
-            >
-              <div class="accordion-body">
-                <strong>This is the first item&apos;s accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control
-                the overall appearance, as well as the showing and hiding via
-                CSS transitions. You can modify any of this with custom CSS or
-                overriding our default variables. It&apos;s also worth noting that
-                just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <div className={styles.content_box}>
+                  <div className={styles.first_content_box}>
+                    <div className={styles.case}>
+                      <p className={styles.first_content_first_text}>
+                        L'apprentissage par renforcement est un type
+                        d'apprentissage automatique qui permet à un agent
+                        d'apprendre à effectuer une tâche en interagissant avec
+                        son environnement. L'agent reçoit des récompenses ou des
+                        punitions en fonction de ses actions. Il apprend à
+                        maximiser les récompenses et à minimiser les punitions.
+                        <br />
+                        <br />
+                        Pour bien comprendre le fonctionnement de
+                        l'apprentissage par renforcement, commençons par définir
+                        quelques termes :
+                      </p>
+                    </div>
+                    <div className={styles.case}>
+                      <div className={styles.text_zone}>
+                        <ul>
+                          <li className={styles.first_content_second_text}>
+                            <p>
+                              Agent : L'agent est l'entité qui va apprendre à
+                              effectuer une tâche. (Ici le robot)
+                            </p>
+                          </li>
+                          <li className={styles.first_content_second_text}>
+                            <p>
+                              Environnement : L'environnement est un système
+                              dynamique qui évolue au cours du temps. Il est
+                              composé de plusieurs éléments (agents, objets,
+                              etc.) qui interagissent entre eux.
+                            </p>
+                          </li>
+                          <li className={styles.first_content_second_text}>
+                            <p>
+                              Simulation : La simulation est un outil qui permet
+                              de reproduire l'environnement dans lequel l'agent
+                              va apprendre. Elle permet de tester différentes
+                              configurations de l'environnement et de l'agent.
+                            </p>
+                          </li>
+                        </ul>
+                        <p>
+                          Comme sur le gif à droite, l'agent se déplace dans son
+                          environnement. On passe par un simulateur pour tester
+                          différentes configurations de l'environnement et de
+                          l'agent avant de les implémenter sur le robot réel.
+                          <br />
+                          <br />
+                          Mais comment l'agent apprend à effectuer une tâche ?
+                        </p>
+                      </div>
+
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/lunar_lander_untrained.gif"
+                          className={styles.gif}
+                          width={600}
+                          height={400}
+                        ></Image>
+                      </div>
+                    </div>
+
+                    <hr className={styles.intercase}></hr>
+
+                    <div className={styles.case}>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/rl_principle.png"
+                          className={styles.image}
+                          alt="..."
+                          width={400}
+                          height={400}
+                        />
+                      </div>
+                      <div className={styles.text_zone}>
+                        <ul>
+                          <li className={styles.first_content_third_text}>
+                            <p>
+                              Observation : L'agent observe son environnement et
+                              enregistre les informations qu'il reçoit. Elle
+                              peut être constituée de plusieurs paramètres
+                              (position, orientation, etc.).
+                            </p>
+                          </li>
+                          <li className={styles.first_content_third_text}>
+                            <p>
+                              Actions : L'agent peut effectuer des actions sur
+                              son environnement. Il peut par exemple se
+                              déplacer, interagir avec un objet, etc.
+                            </p>
+                          </li>
+                          <li className={styles.first_content_third_text}>
+                            <p>
+                              La récompense : L'agent reçoit une récompense ou
+                              une punition en fonction de ses actions. Il
+                              apprend à maximiser les récompenses et à minimiser
+                              les punitions. Cette récompense peut être positive
+                              ou négative et est représentée par un nombre.
+                            </p>
+                          </li>
+                        </ul>
+                        <p>
+                          A chaque timestep (unité élémentaire de temps),
+                          l'agent récupere une observation de son environnement
+                          et effectue une action. Cette action est déterminée
+                          par la politique de l'agent. La politique est une
+                          fonction qui associe une action à une observation.
+                          (généralement un réseau de neurones)
+                        </p>
+                      </div>
+                    </div>
+                    <hr className={styles.intercase}></hr>
+                    <div className={styles.case}>
+                      <div className={styles.text_zone}>
+                        <p>
+                          Finalement, l'agent apprend à effectuer une tâche en
+                          interagissant avec son environnement. Il reçoit des
+                          récompenses ou des punitions en fonction de ses
+                          actions.
+                          <br />
+                          <br />
+                          Si une action est bénéfique pour atteindre l'objectif,
+                          la récompense est positive. Si une action est néfaste
+                          pour atteindre l'objectif, la récompense est négative.
+                          <br />
+                          <br />
+                          L'agent apprend à maximiser les récompenses en
+                          adaptant sa politique. Il apprend à effectuer des
+                          actions qui lui permettent d'atteindre l'objectif.
+                        </p>
+                      </div>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/lunar_lander_trained.gif"
+                          width={600}
+                          height={400}
+                          className={styles.gif}
+                        ></Image>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo"
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button
+                  className={`accordion-button collapsed ${styles.accordion_title}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  Simulateur et environnement
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo"
               >
-                Simulateur et environnement
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseTwo"
-              class="accordion-collapse collapse"
-              aria-labelledby="panelsStayOpen-headingTwo"
-            >
-              <div class="accordion-body">
-                <strong>This is the second item&apos;s accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It&apos;s also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <div className={styles.content_box}>
+                  <div className={styles.second_content_box}>
+                    <div className={styles.case}>
+                      <p className={styles.second_content_first_text}>
+                        Le passage par un simulateur est essentiel pour tester
+                        des configurations différentes de l'environnement et de
+                        l'agent avant de les implémenter sur le robot réel. En
+                        simulation, on peut changer les configurations initiales
+                        de l'environnement et de l'agent, et observer les
+                        résultats.
+                        <br />
+                        <br />
+                        Pour un apprentissage réussi, il faut mettre en place un
+                        bon environnement et un bon agent. Il faut donc tester
+                        différentes configurations pour trouver le meilleur
+                        environnement. Celui-ci est constitué de plusieurs
+                        fonctions qui sont appellées à chaque timestep. Ces
+                        fonctions sont :
+                      </p>
+                    </div>
+                    <div className={styles.case}>
+                      <div className={styles.text_zone}>
+                        <ul>
+                          <li className={styles.second_content_second_text}>
+                            <p>
+                              Fonction d'observation : L'agent observe son
+                              environnement et enregistre les informations qu'il
+                              reçoit. Elle peut être constituée de plusieurs
+                              paramètres (position, orientation, etc.).
+                            </p>
+                          </li>
+                          <li className={styles.second_content_second_text}>
+                            <p>
+                              Fonction reset : Elle est appelée à chaque début
+                              de partie. Elle permet de réinitialiser
+                              l'environnement et l'agent si l'agent a atteint
+                              l'objectif, si le nombre de timestep maximum est
+                              atteint, ou si l'agent a échoué.
+                            </p>
+                          </li>
+                          <li className={styles.second_content_second_text}>
+                            <p>
+                              Fonction de récompense : Elle permet de déterminer
+                              la récompense reçue par l'agent suite à son
+                              action. Elle peut être positive ou négative et est
+                              représentée par un nombre.
+                            </p>
+                          </li>
+                          <li className={styles.second_content_second_text}>
+                            <p>
+                              Fonction step : Elle est appelée à chaque
+                              timestep. C'est elle qui gère tout l'environnement
+                              en appelant les fonctions d'observation, de
+                              réinitialisation et de récompense. Elle renvoie
+                              l'état dans lequel se trouve l'agent, la
+                              récompense reçue et un booléen qui indique si
+                              l'agent a atteint l'objectif ou non.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/carrot.png"
+                          className={`card-Image-top ${styles.card_image2}`}
+                          alt="..."
+                          width={400}
+                          height={400}
+                        />
+                      </div>
+                    </div>
+                    <hr className={styles.intercase}></hr>
+                    <div className={styles.case}>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/reseau.png"
+                          width={612}
+                          height={612}
+                          className={styles.image}
+                        ></Image>
+                      </div>
+                      <p className={styles.text_zone}>
+                        Pour l'apprentissage, on utilise un algorithme
+                        d'apprentissage par renforcement. Il en existe plusieurs
+                        comme DQN, A2C, PPO, etc. Le choix de l'algorithme
+                        dépend de l'environnement et de l'agent et notamment de
+                        l'espace des observations et des actions.
+                        <br />
+                        <br />
+                        Lors de l'apprentissage, à chaque timestep, la fonction
+                        step est appelée. Selon la valeur de récompense reçue,
+                        l'agent adapte sa politique.
+                        <br />
+                        <br />
+                        Il est donc important de bien choisir l'environnement et
+                        l'agent pour que l'apprentissage soit réussi.
+                        <br />
+                        <br />
+                        Quand l'environnement est bien adpaté à un problème, on
+                        peut l'implémenter sur différents simulateurs. Par
+                        exemple, un problème à deux ou trois dimensions
+                        utilisera des simulateurs différents (pyglet en 2D et
+                        pybullet en 3D) mais si l'environnement est bien adpaté,
+                        il pourra être utilisé dans les deux cas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button
+                  className={`accordion-button collapsed ${styles.accordion_title}`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Où en sommes-nous ?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree"
               >
-                Où en sommes-nous ?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="panelsStayOpen-headingThree"
-            >
-              <div class="accordion-body">
-                <strong>This is the third item&apos;s accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It&apos;s also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <div className={styles.content_box}>
+                  <div className={styles.third_content_box}>
+                    <div className={styles.case}>
+                      <p className={styles.third_content_first_text}>
+                        Le projet à beacoup évolué depuis le début. Nous avons
+                        commencé par travailler sur un simulateur en 3D grâce à
+                        pybullet pour pouvoir contrôler un robot spot. Après
+                        avoir passer beaucoup de temps à comprendre le code,
+                        nous avons pu implémenter un environnement
+                        d'apprentissage par renforcement.
+                      </p>
+                    </div>
+                    <div className={styles.case}>
+                      <p className={styles.text_zone}>
+                        A droite se trouve une photo de l'environnement 3D que
+                        nous utilisons. Nous avons la possibilité de disposer
+                        des murs avec lesquels le robot pourra entrer en
+                        collision.
+                        <br />
+                        <br />
+                        Cependant, nous avons rencontré des problèmes avec ce
+                        simulateur. En effet, une fois l'environnement
+                        d'apprentissage mis en place, l'apprentissage était
+                        extrêmeement lent pour des resulats peu concluants. Cela
+                        est dû au simulateur 3D qui est très couteux en
+                        ressources. (1h d'apprentissage pour apprendre au robot
+                        à marcher en ligne droite) Nous avons donc décidé de
+                        changer de simulateur et de passer sur un simulateur en
+                        2D.
+                      </p>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/pybulletLucas.png"
+                          width={800}
+                          height={380}
+                          className={styles.imageborder}
+                        ></Image>
+                      </div>
+                    </div>
+                    <hr className={styles.intercase}></hr>
+                    <div className={styles.case}>
+                      <div className={styles.image_zone}>
+                        <Image
+                          src="/pyglet.png"
+                          width={800}
+                          height={380}
+                          className={styles.pyglet_image}
+                        ></Image>
+                      </div>
+                      <p className={styles.text_zone}>
+                        Passer en 2D présente différents avantages. Tout
+                        d'abord, le simulateur est beaucoup plus rapide et donc
+                        l'apprentissage l'est aussi. De plus, il est plus facile
+                        de créer des environnements plus complexes en 2D. Enfin,
+                        il est plus facile de visualiser les résultats de
+                        l'apprentissage.
+                        <br />
+                        <br />
+                        Le simulateur 2D a été développé de telle manière que
+                        l'agent puisse se déplacer avec les mêmes actions que
+                        dans le simulateur 3D. Cela permet d'utiliser le même
+                        environnement d'apprentissage pour les deux simulateurs.
+                        <br />
+                        <br />
+                        Une fois l'apprentissage terminé en 2D, nous pourrons
+                        utiliser le modèle obtenu au simulateur 3D. Quand les
+                        resultats seront concluants, nous pourrons tester le
+                        modèle sur un robot réel.
+                        <br />
+                        <br />
+                        Aujourd'hui, l'environnement d'apprentissage 2D est en
+                        place. Il reste à optimiser la fonction de récompense et
+                        à lancer l'apprentissage.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

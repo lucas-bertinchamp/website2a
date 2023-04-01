@@ -23,33 +23,74 @@
 }
 
 .main_box {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../public/backgroundGithub.jpg");
+  background-size: cover;
+}
+
+.content_box {
+  display: flex;
+  flex-direction: column;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 20px;
-  height: auto;
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
 .title_box {
   width: 100%;
+  color: white;
+  text-shadow: 1px 1px 3px #000000;
 }
 
-.github_box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #000000;
+.main_description {
+  color: white;
+  text-shadow: 1px 1px 3px #000000;
 }
 
-.server_box {
-  width: 100%;
+.big_card {
+  background-color: #ecf0f1;
+  align-items: center;
+  justify-content: space-evenly;
+  width: calc(100% - var(--ecart));
+  height: calc(100% - var(--ecart));
+  transition: 0.3s cubic-bezier(0, 0, 0.5, 1);
+  border: none;
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: row;
+  border-radius: 10px;
   margin-bottom: 20px;
-  border: 1px solid #000000;
+}
+
+.big_card:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 20%);
+}
+
+.big_card_text {
+  width: 100%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.github_image_box {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot_image {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.link {
+  color: #291287;
+  text-decoration: none;
+  font-weight: bold;
 }

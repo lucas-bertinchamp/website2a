@@ -7,23 +7,41 @@ import Link from "next/link";
 import Question from "../components/Question";
 import { useState } from "react";
 import Router from "next/router";
+import MyModal from "../components/ModalAnswer";
 
 import prisma from "../lib/prisma";
+import Answer from "../components/Answer";
 
 export const getServerSideProps = async () => {
-  const feed = await prisma.question.findMany({
+  const questions = await prisma.question.findMany({
+    include: {
+      author: true,
+    },
+  });
+  const answers = await prisma.answer.findMany({
     include: {
       author: true,
     },
   });
   return {
-    props: { feed },
+    props: { questions, answers },
   };
 };
 
 export default function Download(props) {
-  const { user, isLoading } = useUser();
+  
+  let printQuestionsAnswers = () => {
+    return props.questions.map((question) => {
+      return [<Question data={question}></Question>].concat(
+        props.answers.map((answer) => {
+          if (answer.questionId === question.id)
+            return <Answer data={answer}></Answer>;
+        })
+      );
+    });
+  };
 
+  const { user, isLoading } = useUser();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -32,7 +50,7 @@ export default function Download(props) {
   const submitData = async (e) => {
     try {
       const body = { title, content, user };
-      await fetch("/api/post", {
+      await fetch("/api/postQuestion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -133,9 +151,7 @@ export default function Download(props) {
 
             <div className={styles.questions_box}>
               <h3 className={styles.questions_title}>Questions</h3>
-              {props.feed.map((question) => (
-                <Question data={question}></Question>
-              ))}
+              {printQuestionsAnswers(props.questions, props.answers)}
             </div>
           </div>
         </div>

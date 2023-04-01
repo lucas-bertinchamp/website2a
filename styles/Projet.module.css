@@ -23,9 +23,81 @@
 }
 
 .full_page_box {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20px;
-    height: auto;
-    margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  height: auto;
+  padding-bottom: 100px;
+  color: white;
+}
+
+.objectif_title {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+.page {
+  background-image: url("../public/grandRenard.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content_box {
+  background-color: #ecf0f1;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.accordion_title {
+  background-color: #d2d7d8;
+}
+
+.case {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.intercase {
+  margin: 50px;
+}
+
+.text_zone {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: justify;
+  justify-content: center;
+}
+
+.image_zone {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif {
+  width: 90%;
+  height: 90%;
+  border: #000000 solid 2px;
+}
+
+.image {
+  width: 90%;
+  height: 90%;
+}
+
+.pyglet_image {
+  width: 90%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.imageborder {
+  border: #000000 solid 2px;
+  width: 90%;
+  height: 90%;
 }

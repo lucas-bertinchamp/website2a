@@ -4,8 +4,7 @@ import prisma from "../../../lib/prisma";
 // Required fields in body: title
 // Optional fields in body: content
 export default async function handle(req, res) {
-  console.log(req.body);
-  const { title, content, user } = req.body;
+  const { text, user, question } = req.body;
 
   let authorId = await prisma.user.findUnique({
     where: { email: user.email },
@@ -23,10 +22,10 @@ export default async function handle(req, res) {
     });
   }
 
-  const result = await prisma.question.create({
+  const result = await prisma.answer.create({
     data: {
-      title: title,
-      content: content,
+      questionId: question.id,
+      content: text,
       authorId: authorId.id,
     },
   });
