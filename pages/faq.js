@@ -30,10 +30,10 @@ export const getServerSideProps = async () => {
 export default function Download(props) {
   let printQuestionsAnswers = () => {
     return props.questions.map((question) => {
-      return [<Question data={question}></Question>].concat([
+      return [<Question data={question} key={question.id}></Question>].concat([
         props.answers.map((answer) => {
           if (answer.questionId === question.id)
-            return <Answer data={answer}></Answer>;
+            return <Answer data={answer} key={answer.id}></Answer>;
         }),
       ]);
     });
