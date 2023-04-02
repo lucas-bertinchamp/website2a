@@ -24,24 +24,24 @@ export default function Footer() {
 
           <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item">
-              <a href="/" class="nav-link px-2 text-white">
+              <Link href="/" class="nav-link px-2 text-white">
                 Accueil
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a href="/projet" class="nav-link px-2 text-white">
+              <Link href="/projet" class="nav-link px-2 text-white">
                 Le Projet
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a href="/download" class="nav-link px-2 text-white">
+              <Link href="/download" class="nav-link px-2 text-white">
                 Download
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-              <a href="/faq" class="nav-link px-2 text-white">
+              <Link href="/faq" class="nav-link px-2 text-white">
                 FAQs
-              </a>
+              </Link>
             </li>
           </ul>
         </footer>
