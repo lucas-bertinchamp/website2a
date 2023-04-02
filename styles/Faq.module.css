@@ -41,7 +41,7 @@
 }
 
 .main_page_box_connected {
-  background-image: url("../public/faqBackground2.jpg");
+  background-image: url("../public/firewatch.jpg");
   background-attachment: fixed;
   background-size: cover;
   padding-left: 10%;
@@ -49,4 +49,57 @@
   padding-top: 20px;
   padding-bottom: 20px;
   color: #ffffff;
+}
+
+.main_page_title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-shadow: #000000 1px 1px 3px;
+}
+
+.main_page_text {
+  font-size: large;
+  text-shadow: #000000 1px 1px 3px;
+}
+
+.send_question_title {
+  font-size: xx-large;
+  font-weight: bold;
+  text-shadow: #000000 1px 1px 3px;
+}
+
+.send_question_text {
+  font-size: large;
+  text-shadow: #000000 1px 1px 3px;
+}
+
+.send_question_title_input {
+  background-color: #ececec;
+  margin-bottom: 5px;
+}
+
+.send_question_text_input {
+  background-color: #ececec;
+  margin-bottom: 5px;
+}
+
+.question_zone {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+.question_title {
+  font-size: x-large;
+  font-weight: bold;
+  text-shadow: #000000 1px 1px 3px;
 }

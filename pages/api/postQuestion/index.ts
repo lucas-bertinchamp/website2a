@@ -29,5 +29,6 @@ export default async function handle(req, res) {
       authorId: authorId.id,
     },
   });
+
   res.json(result);
 }

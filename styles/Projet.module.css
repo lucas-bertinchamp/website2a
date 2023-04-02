@@ -43,7 +43,7 @@
 }
 
 .content_box {
-  background-color: #ecf0f1;
+  background-color: #ececec;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 15px;
@@ -88,6 +88,13 @@
 .image {
   width: 90%;
   height: 90%;
+}
+
+.image_principle {
+  width: 80%;
+  height: 85%;
+  margin-right: 15%;
+  margin-left: 10%;
 }
 
 .pyglet_image {

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import Router from "next/router";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import PopoverButton from "./PopoverButton";
+import styles from "./ModalAnswer.module.css";
 
 export default function ModalAnswer(props) {
   const [show, setShow] = useState(false);
@@ -10,6 +12,11 @@ export default function ModalAnswer(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleTextChange = (e) => setText(e.target.value);
+
+  let answerButtonProps = {
+    title: "Attention",
+    content: "Vous devez remplir tous les champs pour envoyer votre réponse.",
+  };
 
   const { user, isLoading } = useUser();
 
@@ -34,7 +41,11 @@ export default function ModalAnswer(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        className={`btn-sm ${styles.main_button}`}
+      >
         Répondre
       </Button>
 
@@ -58,9 +69,13 @@ export default function ModalAnswer(props) {
           <Button variant="secondary" onClick={handleClose}>
             Fermer
           </Button>
-          <Button variant="primary" onClick={submitData}>
-            Envoyer
-          </Button>
+          {text.length > 0 ? (
+            <Button variant="primary" onClick={submitData}>
+              Envoyer
+            </Button>
+          ) : (
+            <PopoverButton data={answerButtonProps}></PopoverButton>
+          )}
         </Modal.Footer>
       </Modal>
     </>

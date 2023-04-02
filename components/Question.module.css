@@ -1,14 +1,136 @@
 .question_box {
+  display: flex;
+  flex-direction: row;
+
   color: #000000;
   border: 1px #000000;
   border-style: solid;
   border-radius: 10px;
-  padding: 10px;
-  background-color: #ececec;
+  background-color: rgb(33, 33, 37);
+  width: 100%;
+
+  margin-top: 20px;
 }
 
-.upvotes {
+.like_column {
   display: flex;
-  flex-direction: line;
+  flex-direction: column;
   align-items: center;
+  padding-top: 10px;
+  margin-right: 10px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  color: #ececec;
+  background-color: #104a61;
+}
+
+.like_button {
+  border: 0px;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+
+.question_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #ececec;
+  background-color: rgb(33, 33, 37);
+  padding: 10px;
+}
+
+.question_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question_author {
+  width: 70%;
+  font-size: small;
+}
+
+.question_answer {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+}
+
+.question_title {
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.question_text {
+  font-size: medium;
+  margin-bottom: 5px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.bar_footer {
+  margin-bottom: 5px;
+}
+
+.question_footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+}
+
+.question_nbAnswer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+
+  font-size: x-small;
+}
+
+.reponse_logo {
+  height: 20px;
+  margin-top: 5px;
+  filter: invert(100%);
+}
+
+.reponse_text {
+  font-size: x-small;
+  margin-left: 10px;
+}
+
+.question_delete {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  width: auto;
+}
+
+.delete_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 0px;
+  background-color: transparent;
+}
+
+.delete_text {
+  font-size: x-small;
+  color: #ececec;
+}
+
+.delete_logo {
+  height: 30px;
+  filter: invert(100%);
+}
+
+.pouce {
+  width: 50px;
+  height: 50px;
 }
