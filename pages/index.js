@@ -91,7 +91,7 @@ export default function Home() {
 
             <div className={`card ${styles.card}`}>
               <Image
-                src="/application.png"
+                src="/r2d2.png"
                 className={`card-Image-top ${styles.card_image4}`}
                 alt="..."
                 width={200}
@@ -134,7 +134,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
