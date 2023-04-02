@@ -70,6 +70,7 @@
   margin-bottom: 5px;
   height: auto;
   margin-bottom: 20px;
+  white-space: pre-line;
 }
 
 .bar_footer {
